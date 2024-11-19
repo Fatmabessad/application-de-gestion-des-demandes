@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<div class="list">
+  <div class="head">
+    <h1>Liste d'expertise</h1>
+    <div class="other-btns" *ngIf="this.user && this.user[0]?.Role != 'Admin'">
+      <button><a routerLink="/ajout-expertise">Ajouter</a></button>
+    </div>
+  </div>
+  <div class="table">
+    <div class="header">
+      <div class="col">NEXP</div>
+      <div class="col">NDPS</div>
+      <div class="col">Nature</div>
+      <div class="col">Quantite</div>
+      <div class="col">Date</div>
+      <div class="col btns">Actions</div>
+    </div>
+    <div class="row hide" *ngFor="let exp of expss">
+      <div class="col">{{ exp.NExp }}</div>
+      <div class="col">{{ exp.DPS_NDPS }}</div>
+      <div class="col">{{ exp.Nature }}</div>
+      <div class="col">{{ exp.Quantite }}</div>
+      <div class="col">{{ exp.Date | date : "dd/MM/yyyy" }}</div>
+      <div class="col btns" *ngIf="this.user && this.user[0]?.Role != 'Admin'">
+        <button (click)="onDelete(exp.NExp)">Supprimer</button
+        ><button (click)="onModify(exp.NExp)">Modifier</button>
+      </div>
+      <div class="col btns" *ngIf="this.user && this.user[0]?.Role === 'Admin'">
+        <button (click)="onAfficher(exp.NExp)">Afficher</button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

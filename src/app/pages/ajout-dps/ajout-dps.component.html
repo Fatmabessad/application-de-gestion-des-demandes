@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+<div class="dps">
+  <h1>Gestion de demande de prestation de service</h1>
+  <div class="rows">
+    <div class="row">
+      <p>NDPS</p>
+      <input type="number" style="width: 150px" [(ngModel)]="ndps" />
+    </div>
+    <div class="row">
+      <p>Proprietaire</p>
+      <select style="width: 250px" [(ngModel)]="proprietaire">
+        <option value="Métlaoui">Métlaoui</option>
+        <option value="Mdhilla">Mdhilla</option>
+        <option value="Moularès">Moularès</option>
+        <option value="Redeyef">Redeyef</option>
+      </select>
+    </div>
+    <div class="row">
+      <p>Nature</p>
+      <select style="width: 250px" [(ngModel)]="nature">
+        <option value="Repair">Repair</option>
+        <option value="Payer">Payer</option>
+        <option value="Upgrade">Upgrade</option>
+        <option value="Install">Install</option>
+      </select>
+    </div>
+    <div class="row">
+      <p>Impultation</p>
+      <input type="number" [(ngModel)]="impultation" />
+    </div>
+  </div>
+  <div class="rows">
+    <div class="row">
+      <p>Probleme</p>
+      <textarea
+        type="text"
+        style="width: 550px; height: 200px"
+        [(ngModel)]="probleme"
+      ></textarea>
+    </div>
+    <div class="row">
+      <p>Degré</p>
+      <input type="checkbox" [(ngModel)]="degree" />
+    </div>
+    <div class="row" *ngIf="this.user && this.user[0]?.Role === 'Admin'">
+      <p>Etat</p>
+      <select style="width: 150px" [(ngModel)]="etat">
+        <option value="En cours">En cours</option>
+        <option value="Termineé">Termineé</option>
+      </select>
+    </div>
+  </div>
+  <button class="add" (click)="onAjout()">Ajouter</button>
+</div>

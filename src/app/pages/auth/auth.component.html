@@ -1,0 +1,53 @@
+<div class="ctn">
+  <div class="bg">
+    <img src="../../../assets/back.jpg" alt="" />
+  </div>
+  <div class="login" *ngIf="login">
+    <img class="logo" src="../../../assets/cpg.png" />
+    <h1></h1>
+    <div class="form">
+      <p>
+        <input placeholder="Email" type="text" [(ngModel)]="email" />
+        <img src="../../../assets/duotone (1).png" alt="" />
+      </p>
+      <p>
+        <input
+          placeholder="Mot de Passe"
+          type="password"
+          [(ngModel)]="password"
+        /><img src="../../../assets/duotone.png" alt="" />
+      </p>
+      <p><button (click)="onLogin()">Login</button></p>
+      <a class="signup-link" (click)="loginfn()"
+        >Nouvel utilisateur ? Inscrivez-vous ici</a
+      >
+    </div>
+  </div>
+  <div class="signup" *ngIf="register">
+    <img class="logo" src="../../../assets/cpg.png" />
+    <h1></h1>
+    <div class="form">
+      <p>
+        <input placeholder="Nom d'utilisateur" type="text" [(ngModel)]="nom" />
+        <img src="../../../assets/duotone (1).png" />
+      </p>
+      <p>
+        <input placeholder="Email" type="text" [(ngModel)]="email" />
+        <img src="../../../assets/duotone (1).png" />
+      </p>
+      <p>
+        <input
+          placeholder="Mot de Passe"
+          type="password"
+          [(ngModel)]="password"
+        />
+        <img src="../../../assets/duotone.png" />
+      </p>
+      <p><button (click)="onRegister()">Submit</button></p>
+      <a class="signup-link" (click)="loginfn()"
+        >Déjà membre ? Connectez-vous ici</a
+      >
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

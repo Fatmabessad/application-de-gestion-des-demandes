@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<div class="dps">
+  <h1>Gestion d'expertise</h1>
+  <div class="rows">
+    <div class="row">
+      <p>Numero Experise</p>
+      <input type="text" [(ngModel)]="nexp" style="width: 150px" />
+    </div>
+    <div class="row">
+      <p>Numero DPS</p>
+      <input type="text" [(ngModel)]="ndps" style="width: 150px" />
+    </div>
+    <div class="row">
+      <p>Designation</p>
+      <input type="text" [(ngModel)]="nature" style="width: 250px" />
+    </div>
+    <div class="row">
+      <p>Quantite</p>
+      <input type="number" [(ngModel)]="quantite" style="width: 100px" />
+    </div>
+   
+  </div>
+  <div class="rows">
+    <div class="row">
+      <p>Presentation</p>
+      <textarea
+        type="text"
+        [(ngModel)]="presentation"
+        style="width: 550px; height: 100px"
+      ></textarea>
+    </div>
+  </div>
+  <button class="add" (click)="onAjout()">Ajouter</button>
+</div>

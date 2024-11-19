@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+
+<div class="list">
+  <div class="head">
+    <h1>Liste de demande de prestation de service</h1>
+    <div class="other-btns">
+      <button
+        *ngIf="this.user && this.user[0]?.Role != 'Admin'"
+        (click)="onAjout()"
+      >
+        Ajouter
+      </button>
+    </div>
+  </div>
+  <div class="table">
+    <div class="header">
+      <div class="col" *ngIf="this.user && this.user[0]?.Role === 'Admin'">
+        Utilisateur id
+      </div>
+      <div class="col">NDPS</div>
+      <div class="col">Proprietaire</div>
+      <div class="col">Nature</div>
+      <div class="col">Impultation</div>
+      <div class="col">Date</div>
+      <div class="col">Urgent</div>
+      <div class="col">Etat</div>
+      <div class="col btns">Actions</div>
+    </div>
+    <div class="row hide" *ngFor="let dps of dpss">
+      <div class="col" *ngIf="this.user && this.user[0]?.Role === 'Admin'">
+        {{ dps.Utilisateur_NUser }}
+      </div>
+      <div class="col">{{ dps.NDPS }}</div>
+      <div class="col">{{ dps.Proprietaire }}</div>
+      <div class="col">{{ dps.Nature }}</div>
+      <div class="col">{{ dps.Imputation }}</div>
+      <div class="col">{{ dps.Date | date : "dd/MM/yyyy" }}</div>
+      <div class="col">{{ dps.Degre === 0 ? "Non" : "Urgent" }}</div>
+      <div class="col">{{ dps.etat }}</div>
+      <div class="col btns" *ngIf="this.user && this.user[0]?.Role === 'Admin'">
+        <button (click)="onAfficher(dps.NDPS)">Afficher</button>
+      </div>
+      <div class="col btns" *ngIf="this.user && this.user[0]?.Role != 'Admin'">
+        <button (click)="onModify(dps.NDPS)">Modifier</button>
+        <button (click)="onDelete(dps.NDPS)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

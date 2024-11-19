@@ -1,0 +1,109 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nom": "Maysoun Mestiri",
+      "email": "maysounmestiri@gmail.com",
+      "password": "mayss2",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "nom": "Fatma Bessada",
+      "email": "fatmabessada@gmail.com",
+      "password": "fatma123",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "nom": "Dazai",
+      "email": "admin@admin.com",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ],
+  "dpss": [
+    {
+      "ndps": "67890",
+      "proprietaire": "Kairouan",
+      "nature": "Payment",
+      "impultation": 34567,
+      "probleme": "Billing discrepancy",
+      "degree": false,
+      "date": "2023-05-05",
+      "user_id": "5"
+    },
+    {
+      "ndps": "998877",
+      "proprietaire": "Gabes",
+      "nature": "Maintenance",
+      "impultation": 65432,
+      "probleme": "Equipment calibration issue",
+      "degree": true,
+      "date": "2023-06-18",
+      "user_id": "6"
+    },
+    {
+      "id": "06e1",
+      "ndps": "6846",
+      "proprietaire": "alzk, aekjzanejaz",
+      "nature": "kjnkj",
+      "impultation": 65465,
+      "probleme": "nlkza,lk",
+      "user_id": "2"
+    },
+    {
+      "id": "f97e",
+      "ndps": "54321",
+      "proprietaire": "Metaloui",
+      "nature": "Expense",
+      "impultation": 23456,
+      "probleme": "Software glitch",
+      "degree": true,
+      "date": "2023-03-20",
+      "user_id": "1"
+    },
+    {
+      "id": "a72f",
+      "ndps": "24564",
+      "proprietaire": "jlkjl",
+      "nature": "kjhbj",
+      "impultation": 548565,
+      "probleme": "b",
+      "degree": true,
+      "date": "2022-02-22",
+      "user_id": "1"
+    },
+    {
+      "id": "495e",
+      "ndps": "11223",
+      "proprietaire": "metlaoui",
+      "nature": "Repair",
+      "impultation": 78901,
+      "probleme": "Equipment damage",
+      "degree": true,
+      "date": "2023-04-10",
+      "user_id": "1"
+    }
+  ],
+  "expertise": [
+    {
+      "nexp": "585",
+      "user_id": "2",
+      "nature": "kkakaz",
+      "quantite": 14,
+      "date": "16-12-2002",
+      "id": "616e"
+    },
+    {
+      "id": "a78c",
+      "ndps": "6846",
+      "nexp": "5501",
+      "nature": "Table",
+      "quantite": 25,
+      "presentation": "Table",
+      "date": "2024-01-02",
+      "user_id": "1"
+    }
+  ]
+}

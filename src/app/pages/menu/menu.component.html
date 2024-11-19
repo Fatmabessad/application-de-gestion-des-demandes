@@ -1,0 +1,24 @@
+<div class="menu">
+  <ul>
+    <p class="welcome" *ngFor="let item of user">
+      Bonjour, <br />
+      {{ item.Nom }}
+    </p>
+    <li>
+      <a routerLink="/list-dps"><img src="../../../assets/tasks (2).png"/>DPS</a>
+    </li>
+    <li>
+      <a routerLink="/list-expertise"><img src="../../../assets/tasks (1).png"/>Expertise</a>
+    </li>
+    <li *ngIf="this.user && this.user[0]?.Role === 'Admin'">
+      <a routerLink="/users"><img src="../../../assets/user.png"/> Utilisateurs</a>
+    </li>
+    <li>
+      <a routerLink="/profile"><img src="../../../assets/user interface.png"/> Profile</a>
+    </li>
+  </ul>
+  <div class="logout">
+    <li><a routerLink="/auth"><img src="../../../assets/deconnect.png"/> Deconnecter</a></li>
+  </div>
+</div>
+<router-outlet></router-outlet>

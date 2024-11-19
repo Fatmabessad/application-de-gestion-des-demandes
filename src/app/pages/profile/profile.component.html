@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+
+<div class="list">
+  <div class="side-bar">
+    <ul>
+      <li (click)="goToApercu()">Aperçu du Profil</li>
+      <li (click)="goToSecurite()">Sécurité du Profil</li>
+    </ul>
+  </div>
+  <div class="main-bar">
+    <div class="apercu" *ngIf="apercu">
+      <h1>Aperçu du Profil</h1>
+      <div class="info" *ngFor="let item of user">
+        <p><span>Nom : </span>{{ item.Nom }}</p>
+        <p><span>Email : </span>{{ item.Email }}</p>
+      </div>
+    </div>
+    <div class="securite" *ngIf="securite">
+      <h1>Sécurité du Profil</h1>
+      <div class="info-sec">
+        <div>
+          <p>E-mail</p>
+          <input type="text" [(ngModel)]="mailInp" />
+        </div>
+        <div>
+          <p>Mot de Passe</p>
+          <input type="text" [(ngModel)]="passInp" />
+        </div>
+        <button (click)="onChanger()"><img src="../../../assets/change.png"/></button>
+      </div>
+    </div>
+  </div>
+</div>

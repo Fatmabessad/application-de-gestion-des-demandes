@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+
+<div class="list">
+  <div class="head">
+    <h1>Liste des Utilisateurs</h1>
+  </div>
+  <div class="table">
+    <div class="header">
+      <div class="col">ID</div>
+      <div class="col">Nom</div>
+      <div class="col" style="width: 300px">E-mail</div>
+      <div class="col btns">Actions</div>
+    </div>
+    <div class="row" *ngFor="let item of users">
+      <div class="col">{{ item.NUser }}</div>
+      
+      <div class="col" style="text-transform: capitalize">{{ item.Nom }}</div>
+      <div class="col" style="width: 300px; overflow-wrap: anywhere">
+        {{ item.Email }}
+      </div>
+      <div class="col btns">
+        <button (click)="onDelete(item.NUser)">
+          <img src="../../../assets/delete.png" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
